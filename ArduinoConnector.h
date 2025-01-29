@@ -39,7 +39,7 @@ namespace ArduinoReader
         ~Connector();
     };
 
-    class Exe { // klasa wykonująca połączenie
+    class Exe { // egzekutywa połączenia
     private:
         Connector* temp;
     public:
