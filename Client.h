@@ -10,7 +10,7 @@
 using namespace std;
 using net = boost::asio::ip::tcp;
 
-namespace client {
+namespace ClientJSON {
     class Client {
     private:
         boost::asio::io_service io_service;
