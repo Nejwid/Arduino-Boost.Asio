@@ -1,4 +1,4 @@
-#include "Connector.h"
+#include "ArduinoConnector.h"
 
 namespace ArduinoReader{
 
