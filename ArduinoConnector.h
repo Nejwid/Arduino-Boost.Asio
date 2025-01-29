@@ -7,7 +7,7 @@
 #include <memory>
 #include <vector>
 #include <string>
-#include "json.hpp" // biblioteka json
+#include "json.hpp" // biblioteka json do pobrania z internetu
 
 using namespace std;
 using json = nlohmann::json;
