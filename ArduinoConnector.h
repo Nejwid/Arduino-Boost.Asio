@@ -12,10 +12,9 @@
 using namespace std;
 using json = nlohmann::json;
 
-namespace ArduinoReader
-{
-    class Connector
-    {
+namespace ArduinoReader{
+
+    class Connector{
     private:
         boost::asio::io_service usb;
         boost::asio::serial_port port;
