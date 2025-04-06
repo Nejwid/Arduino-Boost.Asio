@@ -2,10 +2,10 @@
 
 namespace ArduinoReader{
 
-    unique_ptr<Connector> Connector::instance;
+    unique_ptr<Connector> Connector::instance; // singleton 
     mutex Connector::mtx;
 
-    Connector::Connector(const string& com): port(usb) {
+    Connector::Connector(const string& com): port(usb) { // trying to open chosen port
         try {
             port.open(com); 
             port.set_option(boost::asio::serial_port_base::baud_rate(9600));
@@ -23,7 +23,7 @@ namespace ArduinoReader{
         return *instance;
     }
 
-    void Connector::readData(){
+    void Connector::readData(){ // read data from usb
         string temp; 
         char c;
         while (true) {
@@ -47,7 +47,7 @@ namespace ArduinoReader{
         else cout << "read data first\n";
     }
 
-    // metoda do pobierania logów
+    // getter returning logs
     vector<string> Connector::getLogs() const {
         return logs;
     }
@@ -58,7 +58,7 @@ namespace ArduinoReader{
         temp = &Connector::getInstance(com);
     }
 
-    // menu do odczytu danych z arduino
+    // simple user input menu
     void Exe::read() {
         char UR = ' ';
         cout << "read data from arduino: 1\ndisplay info: 2\n";
@@ -80,7 +80,7 @@ namespace ArduinoReader{
 
     Exe::~Exe() {}
 
-    // Funkcja do serializacji
+    // string serializing method
     string serialize(const string& s) {
         json temp = s;
         return temp.dump(4); // return serialized data in json format (easy to send)
