@@ -12,9 +12,9 @@ using net = boost::asio::ip::tcp;
 using json = nlohmann::json;
 
 namespace TCP{
-    class Server{ // instancja działająca na teoretycznie nieskończonej pętli 
+    class Server{ // instance working on endless loop
     private:
-        json verificationKey = "fjuaydgia3y79e698";
+        json verificationKey = "fjuaydgia3y79e698"; // my custom "verification key"
         vector<string> messages;
         net::acceptor acceptor;
         boost::asio::io_service io_service;
