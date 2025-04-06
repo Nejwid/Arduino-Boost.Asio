@@ -5,7 +5,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "ArduinoConnector.h"
 
 using namespace std;
 using net = boost::asio::ip::tcp;
@@ -22,6 +21,6 @@ namespace ClientJSON {
     public:
         Client(const string& s, const short& t, const string& key);
         void sendMessage();
-        void setMessages(vector<string> temp);
+        void setMessages(vector<string> vec);
     };
 }
