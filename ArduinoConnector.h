@@ -7,12 +7,12 @@
 #include <memory>
 #include <vector>
 #include <string>
-#include "json.hpp" // biblioteka json do pobrania z internetu
+#include "json.hpp" // json library
 
 using namespace std;
 using json = nlohmann::json;
 
-namespace ArduinoReader{
+namespace ArduinoReader{ // class that reads data from serial port
 
     class Connector{
     private:
@@ -31,14 +31,13 @@ namespace ArduinoReader{
         Connector operator= (const Connector&) = delete;
         static Connector& getInstance(const string& com);
 
-        // koniec singletona
         void readData();
         void displayInfo() const;
         vector<string> getLogs() const;
         ~Connector();
     };
 
-    class Exe { // egzekutywa połączenia
+    class Exe {
     private:
         Connector* temp;
     public:
